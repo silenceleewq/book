@@ -1,0 +1,57 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="src" />
+            <item index="1" class="java.lang.String" itemvalue="class" />
+            <item index="2" class="java.lang.String" itemvalue="mode" />
+            <item index="3" class="java.lang.String" itemvalue="wx:if" />
+            <item index="4" class="java.lang.String" itemvalue="wx:for" />
+            <item index="5" class="java.lang.String" itemvalue="wx:for-item" />
+            <item index="6" class="java.lang.String" itemvalue="wx:for-index" />
+            <item index="7" class="java.lang.String" itemvalue="wx:key" />
+            <item index="8" class="java.lang.String" itemvalue="bindtap" />
+            <item index="9" class="java.lang.String" itemvalue="catchtap" />
+            <item index="10" class="java.lang.String" itemvalue="name" />
+            <item index="11" class="java.lang.String" itemvalue="data" />
+            <item index="12" class="java.lang.String" itemvalue="wx:else" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="20">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="router-view" />
+            <item index="7" class="java.lang.String" itemvalue="cube-view" />
+            <item index="8" class="java.lang.String" itemvalue="cube-slide-item" />
+            <item index="9" class="java.lang.String" itemvalue="cube-slide" />
+            <item index="10" class="java.lang.String" itemvalue="v-touch" />
+            <item index="11" class="java.lang.String" itemvalue="text" />
+            <item index="12" class="java.lang.String" itemvalue="image" />
+            <item index="13" class="java.lang.String" itemvalue="page" />
+            <item index="14" class="java.lang.String" itemvalue="swiper" />
+            <item index="15" class="java.lang.String" itemvalue="swiper-item" />
+            <item index="16" class="java.lang.String" itemvalue="view" />
+            <item index="17" class="java.lang.String" itemvalue="block" />
+            <item index="18" class="java.lang.String" itemvalue="import" />
+            <item index="19" class="java.lang.String" itemvalue="template" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="XmlUnboundNsPrefix" enabled="false" level="WARNING" enabled_by_default="false" />
+  </profile>
+</component>
