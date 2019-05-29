@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>node json相关 · GitBook</title>
+        <title>class-dump · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="node 获取终端参数.html" />
     
-    
-    <link rel="prev" href="node 初始化项目.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -209,9 +207,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../node/">
             
-                <a href="./">
+                <a href="../node/">
             
                     
                     node
@@ -223,22 +221,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="node 读取文件内容.html">
+        <li class="chapter " data-level="1.4.1" data-path="../node/node 读取文件内容.html">
             
-                <a href="node 读取文件内容.html">
-            
-                    
-                    node 读取文件内容
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="node 初始化项目.html">
-            
-                <a href="node 初始化项目.html">
+                <a href="../node/node 读取文件内容.html">
             
                     
                     node 读取文件内容
@@ -249,9 +234,22 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="node json.html">
+        <li class="chapter " data-level="1.4.2" data-path="../node/node 初始化项目.html">
             
-                <a href="node json.html">
+                <a href="../node/node 初始化项目.html">
+            
+                    
+                    node 读取文件内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../node/node json.html">
+            
+                <a href="../node/node json.html">
             
                     
                     node json相关
@@ -262,9 +260,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="node 获取终端参数.html">
+        <li class="chapter " data-level="1.4.4" data-path="../node/node 获取终端参数.html">
             
-                <a href="node 获取终端参数.html">
+                <a href="../node/node 获取终端参数.html">
             
                     
                     node 获取终端参数
@@ -434,9 +432,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../JailBreak/">
+        <li class="chapter " data-level="1.9" data-path="./">
             
-                <a href="../JailBreak/">
+                <a href="./">
             
                     
                     iOS 越狱
@@ -448,9 +446,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../JailBreak/class-dump.html">
+        <li class="chapter active" data-level="1.9.1" data-path="class-dump.html">
             
-                <a href="../JailBreak/class-dump.html">
+                <a href="class-dump.html">
             
                     
                     class-dump
@@ -496,7 +494,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >node json相关</a>
+        <a href=".." >class-dump</a>
     </h1>
 </div>
 
@@ -511,21 +509,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="node-json&#x76F8;&#x5173;">node json&#x76F8;&#x5173;</h1>
-<h2 id="&#x5C06;&#x6587;&#x4EF6;&#x4E2D;&#x7684;json&#x89E3;&#x6790;&#x51FA;&#x6765;">&#x5C06;&#x6587;&#x4EF6;&#x4E2D;&#x7684;json&#x89E3;&#x6790;&#x51FA;&#x6765;</h2>
-<p>&#x4F7F;&#x7528; <code>JSON.parse</code> &#x5C06;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x7684;json&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x51FA;&#x6765;, &#x5E76;&#x4E14;&#x653E;&#x5230; map &#x5F53;&#x4E2D;.</p>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x5BFC;&#x5165;&#x6A21;&#x5757;</span>
-<span class="hljs-keyword">const</span> fs             = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
-<span class="hljs-keyword">var</span> jsonFilePath = <span class="hljs-string">&apos;/Users/user/Desktop/temp/temp/imageNames.json&apos;</span>
-<span class="hljs-keyword">var</span> data         = fs.readFileSync(jsonFilePath, <span class="hljs-string">&apos;utf-8&apos;</span>)
-<span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
-<span class="hljs-keyword">var</span> imageJson    = <span class="hljs-built_in">JSON</span>.parse(data, (key, value) =&gt; {
-  dlog(key, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`key`</span>), <span class="hljs-number">0</span>)
-  dlog(value, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`value`</span>), <span class="hljs-number">0</span>)
-  map.set(key, value)
-})
-dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`map`</span>), <span class="hljs-number">0</span>)
+                                <h1 id="class-dump">class-dump</h1>
+<h2 id="&#x67E5;&#x770B;&#x662F;&#x5426;&#x52A0;&#x58F3;">&#x67E5;&#x770B;&#x662F;&#x5426;&#x52A0;&#x58F3;</h2>
+<p>&#x901A;&#x8FC7;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;: <code>otool -l &#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x8DEF;&#x5F84; | grep crypt</code></p>
+<p>&#x5982;&#x679C;&#x4E0B;&#x9762;&#x7684;&#x663E;&#x793A;&#x4E2D;, cryptid &#x4E3A; 1, &#x5C31;&#x662F;&#x672A;&#x8131;&#x58F3;. 0 &#x662F;&#x5DF2;&#x8131;&#x58F3;.</p>
+<pre><code class="lang-bash">     cryptoff 16384
+    cryptsize 9371648
+      cryptid 0
 </code></pre>
+<h2 id="&#x8131;&#x58F3;">&#x8131;&#x58F3;</h2>
+<h2 id="class-dump">class-dump</h2>
 
                                 
                                 </section>
@@ -553,14 +546,10 @@ dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`
 
             
                 
-                <a href="node 初始化项目.html" class="navigation navigation-prev " aria-label="Previous page: node 读取文件内容">
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: iOS 越狱">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="node 获取终端参数.html" class="navigation navigation-next " aria-label="Next page: node 获取终端参数">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -569,7 +558,7 @@ dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"node json相关","level":"1.4.3","depth":2,"next":{"title":"node 获取终端参数","level":"1.4.4","depth":2,"path":"node/node 获取终端参数.md","ref":"node/node 获取终端参数.md","articles":[]},"previous":{"title":"node 读取文件内容","level":"1.4.2","depth":2,"path":"node/node 初始化项目.md","ref":"node/node 初始化项目.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/node json.md","mtime":"2019-05-21T09:02:19.635Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T01:51:19.040Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"class-dump","level":"1.9.1","depth":2,"previous":{"title":"iOS 越狱","level":"1.9","depth":1,"path":"JailBreak/README.md","ref":"JailBreak/README.md","articles":[{"title":"class-dump","level":"1.9.1","depth":2,"path":"JailBreak/class-dump.md","ref":"JailBreak/class-dump.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JailBreak/class-dump.md","mtime":"2019-05-29T01:42:32.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T01:51:19.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

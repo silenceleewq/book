@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>node json相关 · GitBook</title>
+        <title>Shell find · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="node 获取终端参数.html" />
+    <link rel="next" href="../JailBreak/" />
     
     
-    <link rel="prev" href="node 初始化项目.html" />
+    <link rel="prev" href="grep.html" />
     
 
     </head>
@@ -209,9 +209,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../node/">
             
-                <a href="./">
+                <a href="../node/">
             
                     
                     node
@@ -223,22 +223,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="node 读取文件内容.html">
+        <li class="chapter " data-level="1.4.1" data-path="../node/node 读取文件内容.html">
             
-                <a href="node 读取文件内容.html">
-            
-                    
-                    node 读取文件内容
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="node 初始化项目.html">
-            
-                <a href="node 初始化项目.html">
+                <a href="../node/node 读取文件内容.html">
             
                     
                     node 读取文件内容
@@ -249,9 +236,22 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="node json.html">
+        <li class="chapter " data-level="1.4.2" data-path="../node/node 初始化项目.html">
             
-                <a href="node json.html">
+                <a href="../node/node 初始化项目.html">
+            
+                    
+                    node 读取文件内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../node/node json.html">
+            
+                <a href="../node/node json.html">
             
                     
                     node json相关
@@ -262,9 +262,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="node 获取终端参数.html">
+        <li class="chapter " data-level="1.4.4" data-path="../node/node 获取终端参数.html">
             
-                <a href="node 获取终端参数.html">
+                <a href="../node/node 获取终端参数.html">
             
                     
                     node 获取终端参数
@@ -376,9 +376,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../Shell/">
+        <li class="chapter " data-level="1.8" data-path="./">
             
-                <a href="../Shell/">
+                <a href="./">
             
                     
                     Shell
@@ -390,9 +390,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../Shell/Shell 文件夹移动.html">
+        <li class="chapter " data-level="1.8.1" data-path="Shell 文件夹移动.html">
             
-                <a href="../Shell/Shell 文件夹移动.html">
+                <a href="Shell 文件夹移动.html">
             
                     
                     Shell 文件夹移动
@@ -403,9 +403,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../Shell/grep.html">
+        <li class="chapter " data-level="1.8.2" data-path="grep.html">
             
-                <a href="../Shell/grep.html">
+                <a href="grep.html">
             
                     
                     Shell grep
@@ -416,9 +416,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../Shell/find.html">
+        <li class="chapter active" data-level="1.8.3" data-path="find.html">
             
-                <a href="../Shell/find.html">
+                <a href="find.html">
             
                     
                     Shell find
@@ -496,7 +496,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >node json相关</a>
+        <a href=".." >Shell find</a>
     </h1>
 </div>
 
@@ -511,21 +511,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="node-json&#x76F8;&#x5173;">node json&#x76F8;&#x5173;</h1>
-<h2 id="&#x5C06;&#x6587;&#x4EF6;&#x4E2D;&#x7684;json&#x89E3;&#x6790;&#x51FA;&#x6765;">&#x5C06;&#x6587;&#x4EF6;&#x4E2D;&#x7684;json&#x89E3;&#x6790;&#x51FA;&#x6765;</h2>
-<p>&#x4F7F;&#x7528; <code>JSON.parse</code> &#x5C06;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x7684;json&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x51FA;&#x6765;, &#x5E76;&#x4E14;&#x653E;&#x5230; map &#x5F53;&#x4E2D;.</p>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x5BFC;&#x5165;&#x6A21;&#x5757;</span>
-<span class="hljs-keyword">const</span> fs             = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
-<span class="hljs-keyword">var</span> jsonFilePath = <span class="hljs-string">&apos;/Users/user/Desktop/temp/temp/imageNames.json&apos;</span>
-<span class="hljs-keyword">var</span> data         = fs.readFileSync(jsonFilePath, <span class="hljs-string">&apos;utf-8&apos;</span>)
-<span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
-<span class="hljs-keyword">var</span> imageJson    = <span class="hljs-built_in">JSON</span>.parse(data, (key, value) =&gt; {
-  dlog(key, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`key`</span>), <span class="hljs-number">0</span>)
-  dlog(value, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`value`</span>), <span class="hljs-number">0</span>)
-  map.set(key, value)
-})
-dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`map`</span>), <span class="hljs-number">0</span>)
-</code></pre>
+                                <h1 id="shell-find">Shell find</h1>
 
                                 
                                 </section>
@@ -553,12 +539,12 @@ dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`
 
             
                 
-                <a href="node 初始化项目.html" class="navigation navigation-prev " aria-label="Previous page: node 读取文件内容">
+                <a href="grep.html" class="navigation navigation-prev " aria-label="Previous page: Shell grep">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="node 获取终端参数.html" class="navigation navigation-next " aria-label="Next page: node 获取终端参数">
+                <a href="../JailBreak/" class="navigation navigation-next " aria-label="Next page: iOS 越狱">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -569,7 +555,7 @@ dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"node json相关","level":"1.4.3","depth":2,"next":{"title":"node 获取终端参数","level":"1.4.4","depth":2,"path":"node/node 获取终端参数.md","ref":"node/node 获取终端参数.md","articles":[]},"previous":{"title":"node 读取文件内容","level":"1.4.2","depth":2,"path":"node/node 初始化项目.md","ref":"node/node 初始化项目.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/node json.md","mtime":"2019-05-21T09:02:19.635Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T01:51:19.040Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shell find","level":"1.8.3","depth":2,"next":{"title":"iOS 越狱","level":"1.9","depth":1,"path":"JailBreak/README.md","ref":"JailBreak/README.md","articles":[{"title":"class-dump","level":"1.9.1","depth":2,"path":"JailBreak/class-dump.md","ref":"JailBreak/class-dump.md","articles":[]}]},"previous":{"title":"Shell grep","level":"1.8.2","depth":2,"path":"Shell/grep.md","ref":"Shell/grep.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Shell/find.md","mtime":"2019-05-29T01:24:07.201Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T01:51:19.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

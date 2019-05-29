@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>node json相关 · GitBook</title>
+        <title>iOS 马甲包审核 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="node 获取终端参数.html" />
+    <link rel="next" href="../Git/" />
     
     
-    <link rel="prev" href="node 初始化项目.html" />
+    <link rel="prev" href="iOS 创建 Pod 私有仓库.html" />
     
 
     </head>
@@ -106,9 +106,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../iOS/">
+        <li class="chapter " data-level="1.2" data-path="./">
             
-                <a href="../iOS/">
+                <a href="./">
             
                     
                     iOS
@@ -120,9 +120,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../iOS/iOS plist 转 json.html">
+        <li class="chapter " data-level="1.2.1" data-path="iOS plist 转 json.html">
             
-                <a href="../iOS/iOS plist 转 json.html">
+                <a href="iOS plist 转 json.html">
             
                     
                     iOS plist 转 json
@@ -133,9 +133,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../iOS/iOS 创建 Pod 私有仓库.html">
+        <li class="chapter " data-level="1.2.2" data-path="iOS 创建 Pod 私有仓库.html">
             
-                <a href="../iOS/iOS 创建 Pod 私有仓库.html">
+                <a href="iOS 创建 Pod 私有仓库.html">
             
                     
                     iOS 创建 Pod 私有仓库
@@ -146,9 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../iOS/马甲包审核.html">
+        <li class="chapter active" data-level="1.2.3" data-path="马甲包审核.html">
             
-                <a href="../iOS/马甲包审核.html">
+                <a href="马甲包审核.html">
             
                     
                     iOS 马甲包审核
@@ -209,9 +209,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../node/">
             
-                <a href="./">
+                <a href="../node/">
             
                     
                     node
@@ -223,22 +223,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="node 读取文件内容.html">
+        <li class="chapter " data-level="1.4.1" data-path="../node/node 读取文件内容.html">
             
-                <a href="node 读取文件内容.html">
-            
-                    
-                    node 读取文件内容
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="node 初始化项目.html">
-            
-                <a href="node 初始化项目.html">
+                <a href="../node/node 读取文件内容.html">
             
                     
                     node 读取文件内容
@@ -249,9 +236,22 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="node json.html">
+        <li class="chapter " data-level="1.4.2" data-path="../node/node 初始化项目.html">
             
-                <a href="node json.html">
+                <a href="../node/node 初始化项目.html">
+            
+                    
+                    node 读取文件内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../node/node json.html">
+            
+                <a href="../node/node json.html">
             
                     
                     node json相关
@@ -262,9 +262,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="node 获取终端参数.html">
+        <li class="chapter " data-level="1.4.4" data-path="../node/node 获取终端参数.html">
             
-                <a href="node 获取终端参数.html">
+                <a href="../node/node 获取终端参数.html">
             
                     
                     node 获取终端参数
@@ -496,7 +496,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >node json相关</a>
+        <a href=".." >iOS 马甲包审核</a>
     </h1>
 </div>
 
@@ -511,21 +511,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="node-json&#x76F8;&#x5173;">node json&#x76F8;&#x5173;</h1>
-<h2 id="&#x5C06;&#x6587;&#x4EF6;&#x4E2D;&#x7684;json&#x89E3;&#x6790;&#x51FA;&#x6765;">&#x5C06;&#x6587;&#x4EF6;&#x4E2D;&#x7684;json&#x89E3;&#x6790;&#x51FA;&#x6765;</h2>
-<p>&#x4F7F;&#x7528; <code>JSON.parse</code> &#x5C06;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x7684;json&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x51FA;&#x6765;, &#x5E76;&#x4E14;&#x653E;&#x5230; map &#x5F53;&#x4E2D;.</p>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x5BFC;&#x5165;&#x6A21;&#x5757;</span>
-<span class="hljs-keyword">const</span> fs             = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
-<span class="hljs-keyword">var</span> jsonFilePath = <span class="hljs-string">&apos;/Users/user/Desktop/temp/temp/imageNames.json&apos;</span>
-<span class="hljs-keyword">var</span> data         = fs.readFileSync(jsonFilePath, <span class="hljs-string">&apos;utf-8&apos;</span>)
-<span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
-<span class="hljs-keyword">var</span> imageJson    = <span class="hljs-built_in">JSON</span>.parse(data, (key, value) =&gt; {
-  dlog(key, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`key`</span>), <span class="hljs-number">0</span>)
-  dlog(value, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`value`</span>), <span class="hljs-number">0</span>)
-  map.set(key, value)
-})
-dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`map`</span>), <span class="hljs-number">0</span>)
+                                <h1 id="ios-&#x9A6C;&#x7532;&#x5305;&#x5BA1;&#x6838;">iOS &#x9A6C;&#x7532;&#x5305;&#x5BA1;&#x6838;</h1>
+<h2 id="1-&#x56FE;&#x7247;&#x538B;&#x7F29;">1. <strong><code>&#x56FE;&#x7247;&#x538B;&#x7F29;</code></strong></h2>
+<p>brew &#x5B89;&#x88C5; imagemagick
+&#x4E4B;&#x540E; &#x4F7F;&#x7528; convert</p>
+<h2 id="2-&#x56FE;&#x7247;&#x6539;&#x540D;">2. <strong><code>&#x56FE;&#x7247;&#x6539;&#x540D;</code></strong></h2>
+<p>&#x8D44;&#x6E90;&#x6587;&#x4EF6; bi-&#x56FE;&#x7247;&#x540D;-ei
+.h &#x6587;&#x4EF6;&#x4E2D; &#x505A; map&#x6620;&#x5C04;, &#x4F7F;&#x7528;node &#x751F;&#x6210; &#x4E2D;&#x6587;&#x6216;&#x8005; &#x5176;&#x4ED6;&#x56FD;&#x5BB6;&#x7684;&#x56FE;&#x7247;&#x540D;</p>
+<h2 id="3-&#x7C7B;&#x524D;&#x7F00;&#x66F4;&#x6539;">3. <strong><code>&#x7C7B;&#x524D;&#x7F00;&#x66F4;&#x6539;</code></strong></h2>
+<p>&#x4F7F;&#x7528; KLGenerateSpamCode</p>
+<h2 id="4-&#x9879;&#x76EE;&#x540D;&#x79F0;&#x66F4;&#x6539;">4. <strong><code>&#x9879;&#x76EE;&#x540D;&#x79F0;&#x66F4;&#x6539;</code></strong></h2>
+<p>&#x4F7F;&#x7528; KLGenerateSpamCode</p>
+<h2 id="5-&#x6DFB;&#x52A0;&#x5783;&#x573E;&#x65B9;&#x6CD5;-&#x5E76;-&#x8C03;&#x7528;">5. <strong><code>&#x6DFB;&#x52A0;&#x5783;&#x573E;&#x65B9;&#x6CD5; &#x5E76; &#x8C03;&#x7528;</code></strong></h2>
+<p>&#x4F7F;&#x7528; KLGenerateSpamCode</p>
+<h2 id="6-&#x5220;&#x9664;&#x6CE8;&#x91CA;-&#x8FD9;&#x4E2A;&#x6709;&#x70B9;&#x5C0F;&#x95EE;&#x9898;-&#x6709;&#x5F85;&#x6539;&#x8FDB;">6. <strong><code>&#x5220;&#x9664;&#x6CE8;&#x91CA;... &#x8FD9;&#x4E2A;&#x6709;&#x70B9;&#x5C0F;&#x95EE;&#x9898;, &#x6709;&#x5F85;&#x6539;&#x8FDB;</code></strong></h2>
+<p>&#x4F7F;&#x7528; KLGenerateSpamCode</p>
+<h2 id="7-url&#x5730;&#x5740;-des&#x6216;&#x8005;aes&#x52A0;&#x5BC6;">7. <strong><code>URL&#x5730;&#x5740; DES&#x6216;&#x8005;AES&#x52A0;&#x5BC6;</code></strong></h2>
+<pre><code class="lang-plain">iOS: https://www.jianshu.com/p/8896ed432dff
+node: https://www.jianshu.com/p/bb4ce4296612
+&#x4F7F;&#x7528; AnsiX923 &#x586B;&#x5145;&#x65B9;&#x5F0F;
+
+ &#x62BD;&#x51FA; &#x9879;&#x76EE;&#x4E2D;&#x7528;&#x5230;&#x7684;&#x6240;&#x6709;api , &#x4F7F;&#x7528;node &#x6279;&#x91CF;&#x751F;&#x6210; &#x52A0;&#x5BC6;&#x5B57;&#x7B26;&#x4E32; , &#x5199;&#x5230; .h&#x6587;&#x4EF6;&#x4E2D;...
+ &#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019; &#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x7C7B; &#x6539;&#x56DE;&#x660E;&#x6587;
+
+ &#x5BC6;&#x94A5; = &#x9879;&#x76EE;&#x540D;
+ &#x521D;&#x59CB;&#x5411;&#x91CF; &#x6682;&#x5B9A;&#x4E3A; &#x548C; &#x5BC6;&#x94A5;&#x76F8;&#x540C;
 </code></pre>
+<h2 id="8-&#x521B;&#x5EFA;&#x65B0;&#x9879;&#x76EE;-&#x4E00;&#x5B9A;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x9879;&#x76EE;">8. <strong>&#x521B;&#x5EFA;&#x65B0;&#x9879;&#x76EE;</strong> &#x4E00;&#x5B9A;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x9879;&#x76EE;...</h2>
+<h2 id="9-mac-&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x65B0;&#x7528;&#x6237;--&#x94A5;&#x5319;&#x4E32;&#x4FE1;&#x606F;&#x5F97;&#x5F04;&#x5E72;&#x51C0;">9. <strong>mac &#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x65B0;&#x7528;&#x6237; | &#x94A5;&#x5319;&#x4E32;&#x4FE1;&#x606F;&#x5F97;&#x5F04;&#x5E72;&#x51C0;</strong></h2>
+<h2 id="10-&#x6CE8;&#x91CA;&#x5F97;&#x7559;&#x7740;-h&#x6587;&#x4EF6;&#x4E2D;&#x53CD;&#x7F16;&#x8BD1;&#x4E4B;&#x540E;-&#x6CE8;&#x91CA;&#x90FD;&#x80FD;&#x770B;&#x5F97;&#x89C1;">10. <strong>&#x6CE8;&#x91CA;</strong>&#x5F97;&#x7559;&#x7740;, .h&#x6587;&#x4EF6;&#x4E2D;&#x53CD;&#x7F16;&#x8BD1;&#x4E4B;&#x540E; &#x6CE8;&#x91CA;&#x90FD;&#x80FD;&#x770B;&#x5F97;&#x89C1;...</h2>
+<h2 id="11-&#x4F7F;&#x7528;-ollvm-&#x6DF7;&#x6DC6;&#x4EE3;&#x7801;-&#x4E0D;&#x8981;&#x7528;-&#x811A;&#x672C;&#x751F;&#x6210;&#x7684;-&#x5783;&#x573E;&#x4EE3;&#x7801;-&#x6CA1;&#x6709;&#x6CE8;&#x91CA;&#x4E0D;&#x8BF4;-&#x8C03;&#x7528;&#x903B;&#x8F91;&#x8FD8;&#x7B80;&#x5355;-&#x4E00;&#x53CD;&#x7F16;&#x8BD1;-&#x5565;&#x90FD;&#x51FA;&#x6765;&#x4E86;">11. &#x4F7F;&#x7528; <strong>ollvm</strong> &#x6DF7;&#x6DC6;&#x4EE3;&#x7801;, &#x4E0D;&#x8981;&#x7528; &#x811A;&#x672C;&#x751F;&#x6210;&#x7684; &#x5783;&#x573E;&#x4EE3;&#x7801;, &#x6CA1;&#x6709;&#x6CE8;&#x91CA;&#x4E0D;&#x8BF4; &#x8C03;&#x7528;&#x903B;&#x8F91;&#x8FD8;&#x7B80;&#x5355;, &#x4E00;&#x53CD;&#x7F16;&#x8BD1; &#x5565;&#x90FD;&#x51FA;&#x6765;&#x4E86;...</h2>
+<h2 id="12-&#x94A5;&#x5319;&#x4E32;&#x6E05;&#x7406;&#x8FD8;&#x539F;-&#x56E0;&#x4E3A;cer&#x8BC1;&#x4E66;&#x4F1A;&#x88AB;&#x8DDF;&#x8E2A;">12. <strong>&#x94A5;&#x5319;&#x4E32;</strong>&#x6E05;&#x7406;&#x8FD8;&#x539F;, &#x56E0;&#x4E3A;cer&#x8BC1;&#x4E66;&#x4F1A;&#x88AB;&#x8DDF;&#x8E2A;</h2>
+<p><img src="assets/PastedGraphic.png" alt="Alt text"></p>
+<h2 id="13-swift-&#x4EE3;&#x7801;-&#x66F4;&#x5BB9;&#x6613;&#x8FC7;&#x5BA1;-10&#x4E2A;&#x4E2D;&#x6709;-8&#x4E2A;&#x80FD;&#x8FC7;&#x53BB;--&#x56E0;&#x4E3A;&#x4E0D;&#x5BB9;&#x6613;&#x53CD;&#x7F16;&#x8BD1;--&#x4F1A;&#x4E0D;&#x4F1A;&#x52A0;bitcode-&#x4F1A;&#x597D;&#x4E00;&#x4E9B;">13. <strong>swift</strong> &#x4EE3;&#x7801; &#x66F4;&#x5BB9;&#x6613;&#x8FC7;&#x5BA1;, 10&#x4E2A;&#x4E2D;&#x6709; 8&#x4E2A;&#x80FD;&#x8FC7;&#x53BB;... , &#x56E0;&#x4E3A;&#x4E0D;&#x5BB9;&#x6613;&#x53CD;&#x7F16;&#x8BD1;... , &#x4F1A;&#x4E0D;&#x4F1A;&#x52A0;bitcode &#x4F1A;&#x597D;&#x4E00;&#x4E9B;???</h2>
+<h2 id="14-&#x624B;&#x673A;&#x5171;&#x4EAB;&#x70ED;&#x70B9;-&#x53D1;&#x5305;-&#x5F97;&#x5148;&#x98DE;&#x673A;&#x6A21;&#x5F0F;-5&#x5206;&#x949F;&#x4EE5;&#x4E0A;-&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x64CD;&#x4F5C;-&#x4E0D;&#x7136;ip-&#x4E0D;&#x4F1A;&#x5207;&#x6362;">14. &#x624B;&#x673A;&#x5171;&#x4EAB;&#x70ED;&#x70B9; &#x53D1;&#x5305;, &#x5F97;&#x5148;&#x98DE;&#x673A;&#x6A21;&#x5F0F; 5&#x5206;&#x949F;&#x4EE5;&#x4E0A;, &#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x64CD;&#x4F5C;... &#x4E0D;&#x7136;IP &#x4E0D;&#x4F1A;&#x5207;&#x6362;...</h2>
+<h2 id="15-&#x524D;&#x5F80;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7684;-appstoreconnect-&#x9875;&#x9762;&#xFF0C;&#x5728;-testflight-&#x680F;&#x76EE;&#x4E0B;&#xFF0C;&#x627E;&#x5230;&#x4F60;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x8FC7;&#x7684;&#x6784;&#x5EFA;&#x7248;&#x672C;&#xFF0C;&#x70B9;&#x51FB;&#x5C06;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x8BBE;&#x7F6E;&#x4E3A;&#x8FC7;&#x671F;&#xFF0C;&#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x505A;&#x7684;">15. &#x524D;&#x5F80;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7684; AppStoreConnect &#x9875;&#x9762;&#xFF0C;&#x5728; TestFlight &#x680F;&#x76EE;&#x4E0B;&#xFF0C;&#x627E;&#x5230;&#x4F60;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x8FC7;&#x7684;&#x6784;&#x5EFA;&#x7248;&#x672C;&#xFF0C;&#x70B9;&#x51FB;&#x201C;&#x5C06;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x8BBE;&#x7F6E;&#x4E3A;&#x8FC7;&#x671F;&#x201D;&#xFF0C;&#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x505A;&#x7684;</h2>
+<p><img src="assets/&#x6E05;&#x7406;&#x4E8C;&#x8FDB;&#x5236;&#x6863;&#x6848;.png" alt="Alt text"></p>
+<h2 id="16-&#x6E05;&#x7406;-app-&#x8CC7;&#x8A0A;">16. &#x6E05;&#x7406; App &#x8CC7;&#x8A0A;</h2>
+<p>&#x4E4B;&#x524D;&#x586B;&#x5BEB;&#x904E;&#x7684;&#x95DC;&#x9375;&#x8A5E;&#x3001;&#x958B;&#x767C;&#x8005;&#x7DB2;&#x7AD9;&#x9023;&#x7D50;&#x3001;App &#x540D;&#x7A31;&#x3001;App &#x5716;&#x793A;&#xFF0C;&#x5168;&#x90E8;&#x63DB;&#x6210;&#x7121;&#x610F;&#x7FA9;&#x7684;&#x96A8;&#x6A5F;&#x5167;&#x5BB9;&#xFF0C;&#x548C;&#x4F60;&#x7684;&#x771F;&#x6B63;&#x5167;&#x5BB9;&#x4E0D;&#x8981;&#x6709;&#x95DC;&#x806F;&#x3002;&#x5982;&#x5716;&#xFF0C;&#x9019;&#x7A2E;&#x7A7A;&#x7F6E;&#x7684; App &#x6211;&#x5DF2;&#x7D93;&#x6709;&#x597D;&#x591A;&#x500B;&#x4E86;
+<img src="assets/&#x6E05;&#x7406;APP&#x54A8;&#x8BE2;.png" alt="Alt text"></p>
 
                                 
                                 </section>
@@ -553,12 +577,12 @@ dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`
 
             
                 
-                <a href="node 初始化项目.html" class="navigation navigation-prev " aria-label="Previous page: node 读取文件内容">
+                <a href="iOS 创建 Pod 私有仓库.html" class="navigation navigation-prev " aria-label="Previous page: iOS 创建 Pod 私有仓库">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="node 获取终端参数.html" class="navigation navigation-next " aria-label="Next page: node 获取终端参数">
+                <a href="../Git/" class="navigation navigation-next " aria-label="Next page: git">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -569,7 +593,7 @@ dlog(map, <span class="hljs-keyword">new</span> Info(<span class="hljs-string">`
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"node json相关","level":"1.4.3","depth":2,"next":{"title":"node 获取终端参数","level":"1.4.4","depth":2,"path":"node/node 获取终端参数.md","ref":"node/node 获取终端参数.md","articles":[]},"previous":{"title":"node 读取文件内容","level":"1.4.2","depth":2,"path":"node/node 初始化项目.md","ref":"node/node 初始化项目.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/node json.md","mtime":"2019-05-21T09:02:19.635Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T01:51:19.040Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"iOS 马甲包审核","level":"1.2.3","depth":2,"next":{"title":"git","level":"1.3","depth":1,"path":"Git/README.md","ref":"Git/README.md","articles":[{"title":"git 远程仓库","level":"1.3.1","depth":2,"path":"Git/git 远程仓库.md","ref":"Git/git 远程仓库.md","articles":[]},{"title":"git fatal: refusing to merge unrelated histories","level":"1.3.2","depth":2,"path":"Git/git fatal: refusing to merge unrelated histories.md","ref":"Git/git fatal: refusing to merge unrelated histories.md","articles":[]}]},"previous":{"title":"iOS 创建 Pod 私有仓库","level":"1.2.2","depth":2,"path":"iOS/iOS 创建 Pod 私有仓库.md","ref":"iOS/iOS 创建 Pod 私有仓库.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/马甲包审核.md","mtime":"2019-05-29T01:46:12.716Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T01:51:19.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
