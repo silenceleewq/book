@@ -1,0 +1,26 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "Welcome.",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "gitbook-plugin-collapsible-chapters": "^0.1.8",
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silenceleewq/booksource.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silenceleewq/booksource/issues"
+  },
+  "homepage": "https://github.com/silenceleewq/booksource#readme"
+}
