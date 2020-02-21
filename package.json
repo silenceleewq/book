@@ -8,7 +8,11 @@
     "gitbook-plugin-collapsible-chapters": "^0.1.8",
     "gulp": "^4.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "execa": "^4.0.0",
+    "os-homedir": "^2.0.0",
+    "promise.prototype.finally": "^3.1.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

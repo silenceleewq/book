@@ -6,7 +6,7 @@ git add --all
 
 git commit -am "default commit message"
 
-git push
+pc git push
 
 cp -R _book/ $HOME/git_repository/book/ # 将 _book 下生成的内容都复制到一个指定的地方.
 
@@ -16,5 +16,5 @@ git add --all
 
 git commit -am "default commit message"
 
-git push
+pc git push
 
