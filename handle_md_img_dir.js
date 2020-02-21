@@ -33,20 +33,23 @@ source
 ssr
 terminal*/
 
+// 马克飞象导出的 Markdown 文档, 如果有图片, 会导出 zip 压缩包
+// 如果没有图片, 那么就直接是一个 md 文档.
+/*
+* 使用说明: Gitbook 里面会有分类.
+* 在马克飞象里面, 正文的标题一定要符合 #[xxx]yyyy
+* xxx 是 gitbook 分类标题, 就是 SUMMARY.md 文件里面的文件夹名称.
+* yyyy 就是文章的标题
+* */
+
+
 var program = require('commander')
 //文件根目录
 let rootDir = '/Users/lirenqiang/Desktop/MarkElephantExportFiles/'
 let booksourceRootDir = '/Users/lirenqiang/git_repository/booksource/'
 ;(async function () {
 
-  // dlog('hello', new Info(`'hello'`), 0)
-  // return
-
-  // let bookName          = process.argv[2]
-
-  // 处理 Summary File
-  // await handleSummaryFile(bookName, '实例文档')
-
+  // 先进行解压, 如果有.zip 就解压, 没有就不解压.
   await unzip()
 
   // 读取文件目录
@@ -74,38 +77,41 @@ let booksourceRootDir = '/Users/lirenqiang/git_repository/booksource/'
 
   let bookDir = booksourceRootDir + bookName + '/'
 
-  // 新的图片存放路径
-  var imageFolderName = fileName.toString().split('.md')[0]
-  imageFolderName = imageFolderName.substring(5, imageFolderName.toString().length)
-  var newImageDir     = rootDir + imageFolderName + '/'
+  // 修改正文内容标题.
+  await modifyFileContentTitle(filePath)
 
-  // 创建文件
-  if (!fs.existsSync(newImageDir)) {
-    await pMakeDir(newImageDir)
+  // 判断图片文件数组个数, 如果为0, 说明文档没有图片
+  let containImage = imageFiles.length > 0
+
+
+  if(containImage){
+    // 新的图片存放路径
+    var imageFolderName = fileName.toString().split('.md')[0]
+    imageFolderName = imageFolderName.substring(5, imageFolderName.toString().length)
+    var newImageDir     = rootDir + imageFolderName + '/'
+
+    // 创建存放图片的文件
+    if (!fs.existsSync(newImageDir)) {
+      await pMakeDir(newImageDir)
+    }
+
+
+    // 替换文件内容里面的图片路径
+    // fileContent = fileContent.toString().replace('![Alt text](./', '![Alt text](../' + imageFolderName + '/')
+    await replaceFileContentImagePath(filePath, imageFolderName)
+
+    // 将图片文件移动到新的图片文件存储路径
+    for (let key in imageFiles) {
+      let imageName = imageFiles[key]
+      await moveFile(rootDir + imageName, newImageDir)
+    }
+    // 将图片文件夹移动到 booksource 里面
+    moveFile(newImageDir, bookDir)
   }
-
-
-  // 替换文件内容里面的图片路径
-  // fileContent = fileContent.toString().replace('![Alt text](./', '![Alt text](../' + imageFolderName + '/')
-  await modifyFileContent(filePath, imageFolderName)
-
-  dlog(imageFiles, new Info(`imageFiles`), 0)
-
-  // 将图片文件移动到新的图片文件存储路径
-  for (let key in imageFiles) {
-    let imageName = imageFiles[key]
-    await moveFile(rootDir + imageName, newImageDir)
-  }
-
-  dlog(fileName, new Info(`fileName`), 0)
-  dlog(newImageDir, new Info(`newImageDir`), 0)
-  dlog('移动完毕', new Info(`'移动完毕'`), 0)
 
   // 将md文档和图片都移动到 book source 文件里面
   // 移动文档
   moveFile(filePath, bookDir)
-  moveFile(newImageDir, bookDir)
-
 
   // 处理 Summary File
   await handleSummaryFile(bookName, fileName)
@@ -152,15 +158,25 @@ async function unzip() {
     }
   }
 
-  await execa('bash', [
-    path.resolve(__dirname, 'unzip.sh'),
-    rootDir + filename,
-    rootDir,
-  ])
 
+  if(filename){
+    await execa('bash', [
+      path.resolve(__dirname, 'unzip.sh'),
+      rootDir + filename,
+      rootDir,
+    ])
+  }
 }
 
-async function modifyFileContent(filePath, imageFolderName) {
+// 因为正文里面的标题是 '[iOS]NSOperation自定义子类' 这样子的
+// 为了不显得奇怪, 我要把 '[iOS]' 这个去掉
+async function modifyFileContentTitle(filePath) {
+  let fileContent = await pReadTextFile(filePath)
+  fileContent = fileContent.toString().replace(/^#\[.*\]/, '# ')
+  await pWriteTextFile(filePath, fileContent)
+}
+
+async function replaceFileContentImagePath(filePath, imageFolderName) {
   // 读取文件内容
   let fileContent = await pReadTextFile(filePath)
   fileContent     = fileContent.toString().replace('![Alt text](./', '![Alt text](' + imageFolderName + '/')
