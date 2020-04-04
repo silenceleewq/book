@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Swift · GitBook</title>
+        <title>Swift String · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Swift @escaping & @nonescaping.html" />
+    <link rel="next" href="../Git/" />
     
     
-    <link rel="prev" href="../iOS/iOSDebugAppCodeBreakPoint失效.html" />
+    <link rel="prev" href="Swift Any & AnyObject.html" />
     
 
     </head>
@@ -413,7 +413,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="./">
             
                 <a href="./">
             
@@ -453,7 +453,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="String.html">
+        <li class="chapter active" data-level="1.3.3" data-path="String.html">
             
                 <a href="String.html">
             
@@ -1048,7 +1048,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Swift</a>
+        <a href=".." >Swift String</a>
     </h1>
 </div>
 
@@ -1063,7 +1063,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="swift">Swift</h1>
+                                <h1 id="swift-string">Swift String</h1>
+<h2 id="string-padding-&#x5B57;&#x7B26;&#x4E32;&#x586B;&#x5145;">String padding &#x5B57;&#x7B26;&#x4E32;&#x586B;&#x5145;.</h2>
+<p>&#x5F53;&#x7528;&#x6237;&#x8F93;&#x5165;&#x4E00;&#x4E2A;3&#x4F4D;&#x5B57;&#x7B26;&#x4E32;, &#x6211;&#x8FD9;&#x91CC;&#x8981;&#x6C42;&#x662F;&#x6700;&#x5C11;10&#x4F4D;, &#x90A3;&#x4E48;&#x4E45;&#x53EF;&#x4EE5;&#x7528;padding&#x6765;&#x8FDB;&#x884C;&#x586B;&#x5145;.
+&#x9700;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x662F;, startingAt: &#x8FD9;&#x91CC;&#x7684;&#x53C2;&#x6570;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7684;index, &#x4E5F;&#x5C31;&#x662F; withPad: &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x7D22;&#x5F15;, &#x5B98;&#x65B9;API, &#x6709;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x4ECB;&#x7ECD;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;123&quot;</span>
+<span class="hljs-keyword">let</span> mutableStr = str
+<span class="hljs-keyword">if</span> mutableStr.<span class="hljs-built_in">count</span> &lt; <span class="hljs-number">10</span> {
+    <span class="hljs-keyword">let</span> mutableStrPadding: <span class="hljs-type">String</span> = mutableStr.padding(toLength: <span class="hljs-number">16</span>, withPad: <span class="hljs-string">&quot;1&quot;</span>, startingAt: <span class="hljs-number">0</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;copyKey = <span class="hljs-subst">\(mutableStr)</span>&quot;</span>)
+    <span class="hljs-built_in">print</span>(mutableStrPadding)
+}
+copyKey = <span class="hljs-number">123</span>
+<span class="hljs-number">1231111111</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1091,12 +1104,12 @@
 
             
                 
-                <a href="../iOS/iOSDebugAppCodeBreakPoint失效.html" class="navigation navigation-prev " aria-label="Previous page: iOS Debug Appcode breakpoint 失效">
+                <a href="Swift Any & AnyObject.html" class="navigation navigation-prev " aria-label="Previous page: Swift Any & AnyObject">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Swift @escaping & @nonescaping.html" class="navigation navigation-next " aria-label="Next page: Swift @escaping & @nonescaping">
+                <a href="../Git/" class="navigation navigation-next " aria-label="Next page: git">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1107,7 +1120,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Swift","level":"1.3","depth":1,"next":{"title":"Swift @escaping & @nonescaping","level":"1.3.1","depth":2,"path":"Swift/Swift @escaping & @nonescaping.md","ref":"Swift/Swift @escaping & @nonescaping.md","articles":[]},"previous":{"title":"iOS Debug Appcode breakpoint 失效","level":"1.2.22","depth":2,"path":"iOS/iOSDebugAppCodeBreakPoint失效.md","ref":"iOS/iOSDebugAppCodeBreakPoint失效.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Swift/README.md","mtime":"2019-09-25T01:54:47.512Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-04T03:33:55.459Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Swift String","level":"1.3.3","depth":2,"next":{"title":"git","level":"1.4","depth":1,"path":"Git/README.md","ref":"Git/README.md","articles":[{"title":"git 远程仓库","level":"1.4.1","depth":2,"path":"Git/git 远程仓库.md","ref":"Git/git 远程仓库.md","articles":[]},{"title":"git fatal: refusing to merge unrelated histories","level":"1.4.2","depth":2,"path":"Git/git fatal: refusing to merge unrelated histories.md","ref":"Git/git fatal: refusing to merge unrelated histories.md","articles":[]}]},"previous":{"title":"Swift Any & AnyObject","level":"1.3.2","depth":2,"path":"Swift/Swift Any & AnyObject.md","ref":"Swift/Swift Any & AnyObject.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Swift/String.md","mtime":"2020-03-11T11:47:34.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-04T03:33:55.459Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
