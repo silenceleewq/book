@@ -3,15 +3,13 @@ const { dlog, Info } = require('../lib/dlog')
 const execa          = require('execa')
 const fs             = require('fs')
 const path           = require('path')
-
-const util = require('util')
+const rimraf         = require('rimraf')
+const util           = require('util')
 
 const promiseFinally = require('promise.prototype.finally')
 
 // 向 Promise.prototype 增加 finally()
 promiseFinally.shim()
-
-
 
 /*
 *
@@ -42,10 +40,9 @@ terminal*/
 * yyyy 就是文章的标题
 * */
 
-
-var program = require('commander')
+var program           = require('commander')
 //文件根目录
-let rootDir = '/Users/lirenqiang/Desktop/MarkElephantExportFiles/'
+let rootDir           = '/Users/lirenqiang/Desktop/MarkElephantExportFiles/'
 let booksourceRootDir = '/Users/lirenqiang/git_repository/booksource/'
 ;(async function () {
 
@@ -83,18 +80,16 @@ let booksourceRootDir = '/Users/lirenqiang/git_repository/booksource/'
   // 判断图片文件数组个数, 如果为0, 说明文档没有图片
   let containImage = imageFiles.length > 0
 
-
-  if(containImage){
+  if (containImage) {
     // 新的图片存放路径
     var imageFolderName = fileName.toString().split('.md')[0]
-    imageFolderName = imageFolderName.substring(5, imageFolderName.toString().length)
+    imageFolderName     = imageFolderName.substring(5, imageFolderName.toString().length)
     var newImageDir     = rootDir + imageFolderName + '/'
 
     // 创建存放图片的文件
     if (!fs.existsSync(newImageDir)) {
       await pMakeDir(newImageDir)
     }
-
 
     // 替换文件内容里面的图片路径
     // fileContent = fileContent.toString().replace('![Alt text](./', '![Alt text](../' + imageFolderName + '/')
@@ -105,17 +100,27 @@ let booksourceRootDir = '/Users/lirenqiang/git_repository/booksource/'
       let imageName = imageFiles[key]
       await moveFile(rootDir + imageName, newImageDir)
     }
+    //判断是否有同名的文件夹.
+    dlog(bookDir + imageFolderName, new Info(`bookDir`), 0)
+    if (fs.existsSync(bookDir + imageFolderName)) {
+      dlog('删除' + bookDir + imageFolderName, new Info(`'删除'+bookDir+imageFolderName`), 0)
+      rimraf.sync(bookDir + imageFolderName)
+    }
     // 将图片文件夹移动到 booksource 里面
     moveFile(newImageDir, bookDir)
   }
 
   // 将md文档和图片都移动到 book source 文件里面
   // 移动文档
+  dlog(bookDir + fileName, new Info(`bookDir`), 0)
+  if(fs.existsSync(bookDir + fileName)){
+    dlog('删除' + bookDir + fileName, new Info(`'删除'+bookDir+fileName`), 0)
+    rimraf.sync(bookDir + fileName)
+  }
   moveFile(filePath, bookDir)
 
   // 处理 Summary File
   await handleSummaryFile(bookName, fileName)
-
 })()
 
 async function getBookName(filepath) {
@@ -123,20 +128,22 @@ async function getBookName(filepath) {
 
   let bookname = fileContent.toString().match(/^#\[.*\]/)[0]
 
-  return bookname.substring(2, bookname.toString().length-1)
+  return bookname.substring(2, bookname.toString().length - 1)
 }
 
 async function handleSummaryFile(bookName, filename) {
   dlog(bookName, new Info(`bookName`), 0)
   dlog(filename, new Info(`filename`), 0)
-  let smfile = booksourceRootDir + 'SUMMARY.md'
-  let smdata = await pReadTextFile(smfile)
+  let smfile    = booksourceRootDir + 'SUMMARY.md'
+  let smdata    = await pReadTextFile(smfile)
   let smContent = smdata.toString()
 
   // 提取 title
   var title = filename.toString().split('.md')[0]
-  title = title.substring(5, title.toString().length)
+  let indexOf = title.indexOf(']')
+  title      = title.substring(indexOf+1, title.toString().length)
 
+  // 判断是否已经有同名的文档.
   // dlog(smContent, new Info(`smContent`), 0)
   let searchString = `* [${bookName}](${bookName}/README.md)`
   dlog(searchString, new Info(`searchString`), 0)
@@ -144,9 +151,17 @@ async function handleSummaryFile(bookName, filename) {
   dlog(index, new Info(`index`), 0)
   let cate = `\n\t* [${title}](${bookName}/${filename})`
   dlog(cate, new Info(`cate`), 0)
-  smContent = [smContent.slice(0, index), cate, smContent.slice(index)].join('')
-  dlog(smContent, new Info(`smContent`), 0)
-  pWriteTextFile(smfile, smContent)
+  // dlog(smContent, new Info(`smContent`), 0)
+  if(smContent.includes(cate)){
+    dlog('包含 cate', new Info(`'包含 cate'`), 0)
+  } else {
+    smContent = [smContent.slice(0, index), cate, smContent.slice(index)].join('')
+    dlog(smContent, new Info(`smContent`), 0)
+    pWriteTextFile(smfile, smContent)
+  }
+
+
+
 }
 
 async function unzip() {
@@ -158,8 +173,7 @@ async function unzip() {
     }
   }
 
-
-  if(filename){
+  if (filename) {
     await execa('bash', [
       path.resolve(__dirname, 'unzip.sh'),
       rootDir + filename,
@@ -172,17 +186,17 @@ async function unzip() {
 // 为了不显得奇怪, 我要把 '[iOS]' 这个去掉
 async function modifyFileContentTitle(filePath) {
   let fileContent = await pReadTextFile(filePath)
-  fileContent = fileContent.toString().replace(/^#\[.*\]/, '# ')
+  fileContent     = fileContent.toString().replace(/^#\[.*\]/, '# ')
   await pWriteTextFile(filePath, fileContent)
 }
 
 async function replaceFileContentImagePath(filePath, imageFolderName) {
   // 读取文件内容
   let fileContent = await pReadTextFile(filePath)
-  fileContent     = fileContent.toString().replace('![Alt text](./', '![Alt text](' + imageFolderName + '/')
-
+  // 改进版本,采用 正则表达式 来进行全局替换
+  fileContent     = fileContent.toString().replace(/\!\[Alt text\]\(\./g, '![Alt text](' + imageFolderName)
+  dlog(fileContent, new Info(`fileContent`), 0)
   await pWriteTextFile(filePath, fileContent)
-
 }
 
 async function moveFile(src, dst) {
